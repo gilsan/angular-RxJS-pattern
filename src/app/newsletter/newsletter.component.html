@@ -1,0 +1,12 @@
+<fieldset class="newsletter">
+   <legend>뉴스레터</legend>
+   <h5>안녕!! {{firstName$ | async}} 씨,
+     구독하시려면 메일주소를 넣어주세요.
+   </h5>
+   <form>
+     <input #email type="email" name="email"
+       placeholder="메일주소 입력" autocomplete="off">
+    <input type="button" class="button button-primary" value="Subscribe"
+      (click)="subscribeToNewsletter(email)">
+   </form>
+</fieldset>

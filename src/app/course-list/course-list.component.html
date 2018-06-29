@@ -1,0 +1,20 @@
+<table class="courses-list card card-strong" *ngIf="courses else loadingCoures">
+  <tr class="course-summary" *ngFor="let course of courses">
+      <td>
+          <img class="lesson-logo"
+               src="https://material.angularjs.org/latest/img/icons/angular-logo.svg">
+      </td>
+      <td class="description">
+          {{course.description}}
+      </td>
+      <td>
+          <button class="button button-primary"
+                  [routerLink]="['/course',course.url]">
+              보기
+          </button>
+      </td>
+  </tr>
+</table>
+<ng-template #loadingCoures>
+<div>로딩중 ...</div>
+</ng-template>

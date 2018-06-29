@@ -1,0 +1,12 @@
+<h3>{{ lesson?.description }}</h3>
+<h5>시간: {{ lesson?.duration }}</h5>
+
+<iframe *ngIf="lesson?.videoUrl"
+  width="260" height="150" frameborder="0" allowfullscreen
+  [src]="lesson?.videoUrl | safeUrl">
+</iframe>
+
+<h5>Description</h5>
+<div class="lessons-nav">
+  <button>편집</button>
+</div>

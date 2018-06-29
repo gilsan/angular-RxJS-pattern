@@ -1,0 +1,21 @@
+<header class="l-header">
+  <ul class="top-menu disable-link-styles">
+    <li>
+      <a [routerLink]="['/home']" routerLinkActive="menu-active">홈</a>
+    </li>
+    <li>
+        <a [routerLink]="['/allLessons']" routerLinkActive="menu-active"
+        *ngIf="(isLoggedIn$ | async)">전체강좌</a>
+    </li>
+    <li>
+      <a [routerLink]="['/course']" routerLinkActive="menu-active"
+      *ngIf="(isLoggedIn$ | async)">강좌</a>
+  </li>
+    <li *ngIf="!(isLoggedIn$ | async)">
+      <a [routerLink]="['/login']" routerLinkActive="menu-active">로그인</a>
+    </li>
+    <li *ngIf="(isLoggedIn$ | async)">
+        <a>로그아웃</a>
+      </li>
+  </ul>
+</header>

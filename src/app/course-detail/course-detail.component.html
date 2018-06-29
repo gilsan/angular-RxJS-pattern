@@ -1,0 +1,28 @@
+<!--
+<div class="screen-container">
+
+    <h2>{{course?.description}}</h2>
+
+    <table class="table lessons-list card card-strong" *ngIf="lessons$ | async">
+        <tbody>
+        <tr *ngFor="let lesson of ( lessons$ | async )">
+            <td class="lesson-title"> {{lesson.description}}</td>
+            <td class="duration">
+                <i class="md-icon duration-icon">access_time</i>
+                <span>{{lesson.duration}}</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div *ngIf="! lessons$ | async">Loading ...</div>
+
+</div>
+-->
+<div class="screen-container">
+     <h2>{{course?.description}}</h2>
+    <app-lesson-list [lessons]="lessons$ | async"></app-lesson-list>
+</div>
+<app-course-detail-header [course]="course$ | async" [lessons]="lessons$ | async"
+(subscribe)="onSubscribe($event)"></app-course-detail-header>
+

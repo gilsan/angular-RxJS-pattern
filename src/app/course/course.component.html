@@ -1,0 +1,18 @@
+
+ <div class="course-md">
+   <h2>설명 : {{ (course$ | async)?.description}}</h2>
+   <div *ngIf = "detail$ | async as lessonDetail else masterTpl">
+     <button (click)="backToMaster()">뒤로</button>
+     <app-lesson-detail [lesson]="detail$ | async"></app-lesson-detail>
+   </div>
+
+   <ng-template #masterTpl>
+     <div class="lessons-nav">
+       <button (click)="previousLessonsPage()">이전</button>
+       <button (click)="nextLessonsPage()">다음</button>
+     </div>
+
+     <app-lesson-list [lessons]="lessons$ | async"
+       (selected)="selectDetail($event)"></app-lesson-list>
+   </ng-template>
+ </div>

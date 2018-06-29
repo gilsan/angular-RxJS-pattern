@@ -1,0 +1,18 @@
+<!--
+<div  class="header">
+    <app-top-menu></app-top-menu>
+</div>
+ -->
+
+<div class="screen-container login-screen">
+  <h2>로그인</h2>
+  <div>
+    <input #email type="email" name="email" placeholder="이메일" autocomplete="off">
+  </div>
+  <div>
+      <input #password type="password" name="password" placeholder="비번" autocomplete="off">
+  </div>
+
+  <input type="submit" value="Login"
+     class="button button-primary" (click)="login(email.value,password.value)">
+</div>
